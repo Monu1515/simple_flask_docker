@@ -1,6 +1,4 @@
 name: cidocker
-env:
-  TAG: $(date +'%Y-%m-%d_%H-%M')
 on:
   push:
     branches:
@@ -21,4 +19,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: mohanraw/flask:${{ env.TAG }}
+          tags: mohanraw/flask:latest
