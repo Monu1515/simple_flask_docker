@@ -2,7 +2,7 @@ name: Vulnerability Scan
 
 on:
   workflow_run:
-    workflows: ["cicddocker"]
+    workflows: ["cidocker"]
 
 jobs:
   scan:
@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Pull docker image
-        run: docker pull mohanraw/flask-app:latest
+        run: docker pull mohanraw/flask:latest
 
       - uses: dataswift/gha-trivy@v3.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          image: mohanraw/flask-app:latest
+          image: mohanraw/flask:latest
